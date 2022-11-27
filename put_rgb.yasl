@@ -1,0 +1,32 @@
+#!yasl_macos
+#!
+
+{
+
+}bin_list_to_int
+
+{
+    1:(binary_to_int):5
+    1:!
+}get_from_rgb_stack
+
+{
+
+}int_string
+
+
+
+{
+    "\e[48;2;"
+    "255;"  // get_from_rgb_stack (このとき，文字列に変換する必要がある)
+    "100;"  // get_from_rgb_stack
+    "233"   // get_from_rgb_stack
+    "m      "
+    +
+    +
+    +
+    +
+    print
+}put_rgb
+
+put_rgb
