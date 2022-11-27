@@ -1,0 +1,23 @@
+#!yasl_macos
+2 !=?
+	("error" print exit):(!)
+= 0 ==?
+	(1 print exit): (= 1 == ?
+						(1 print exit): ())
+0: = :1
+{
+	=
+	1 -
+}decrement
+1 -
+#(1: decrement :1)
+
+{
+	1:("*" eval):1
+	1:# 1 > ?
+		(yasl_fact) : (1: print)
+}yasl_fact
+
+yasl_fact
+
+

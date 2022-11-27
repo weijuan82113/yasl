@@ -101,19 +101,20 @@ read
 #(binary_to_decimal)
 
 {
-    3: = :0
-    0: ""
-    0: "+"
-    eval
+	";"
+	3: =
+	""
+    +
+	+
     3:!
 }get_from_rgb_stack
 
 {
-    "\e[48;2;"
+    "\e[48;2"
     get_from_rgb_stack // R
     get_from_rgb_stack // G
     get_from_rgb_stack // B
-    "m "
+    "m  "
     +
     +
     +

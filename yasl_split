@@ -1,0 +1,19 @@
+#!yasl_macos
+2
+#!
+"abcdefahijkamnopq"
+"a"
+0: = :1
+0: ! :0
+
+][
+print_stack
+{
+	= 1:= != ?
+		(0: = ! :2) : (2:# #(2: + :2))
+}
+split
+
+#split
+print_stack
+
