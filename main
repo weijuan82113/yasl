@@ -69,8 +69,6 @@ read
 	3:][:0
 	#(shift_6bit)
 )
-print_stack
-
 
 {
 	"not rectangle\n" print
@@ -79,10 +77,6 @@ print_stack
 
 2:= 0 != ?
 	(error_rect)
-
-print_stack
-
-print_stack
 
 {
 		1 2:= <<
@@ -105,4 +99,27 @@ print_stack
 
 4:#
 #(binary_to_decimal)
-print_stack
+
+{
+    3: = :0
+    0: ""
+    0: "+"
+    eval
+    3:!
+}get_from_rgb_stack
+
+{
+    "\e[48;2;"
+    get_from_rgb_stack // R
+    get_from_rgb_stack // G
+    get_from_rgb_stack // B
+    "m "
+    +
+    +
+    +
+    +
+    print
+}put_rgb_loop
+
+3:# 3 /
+#(put_rgb_loop)
