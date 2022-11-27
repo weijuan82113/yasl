@@ -1,0 +1,74 @@
+#!yasl_macos
+#!
+read
+!][
+
+0:("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"):1	//initiall base_charactor_stack1
+0:(0):2																		//initiall increment_stack2
+
+{
+	1 "+"
+	eval
+}increment
+
+{
+	=
+	1:=
+	2:=
+	]#[
+	==
+}find_base64
+
+{
+	2:= 2 %:3
+	2:(1 >>):2
+}set_binary
+
+{
+	6
+	#(set_binary)							//set int to barary
+	3:(6 []):3
+	!
+}find_base64_true
+
+{
+	"can not find base64 charactor\n" print
+	exit
+}error
+
+{
+	(2:= 63 <=)?
+	(
+		(find_base64)?
+			(find_base64_true) : (2: increment :2 find_base64_loop)
+	):
+	(
+		(= "\n" ==) ?
+			(! 2:(! 0):2 find_base64_loop) : (error)
+	)
+}find_base64_loop
+
+1 -
+#find_base64_loop
+
+{
+	(2:= 8 ==)?
+		(
+			4:(8 []):4 2:(! 0):2
+		):
+		(
+			print_stack
+		)
+}make_byte_lst
+
+{
+	0:(= !):4
+	2:increment:2
+	make_byte_lst
+}shift_6bit
+
+3:#
+#(
+	3:][:0
+	#(shift_6bit)
+)
