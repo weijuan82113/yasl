@@ -34,7 +34,7 @@ read
 {
 	"can not find base64 charactor\n" print
 	exit
-}error
+}error_b64
 
 {
 	(2:= 63 <=)?
@@ -44,7 +44,7 @@ read
 	):
 	(
 		(= "\n" ==) ?
-			(! 2:(! 0):2 find_base64_loop) : (error)
+			(! 2:(! 0):2 find_base64_loop) : (error_b64)
 	)
 }find_base64_loop
 
@@ -55,9 +55,6 @@ read
 	(2:= 8 ==)?
 		(
 			4:(8 []):4 2:(! 0):2
-		):
-		(
-			print_stack
 		)
 }make_byte_lst
 
@@ -72,3 +69,39 @@ read
 	3:][:0
 	#(shift_6bit)
 )
+print_stack
+
+
+{
+	"not rectangle\n" print
+	exit
+}error_rect
+
+2:= 0 != ?
+	(error_rect)
+
+print_stack
+
+print_stack
+
+{
+		1 2:= <<
+		"+"
+		eval
+}shift_decial
+
+{
+	3:# 0 == ?
+		3:(0):3			//decimal_stack_initall
+	1 & 1 == ?
+		(3:shift_decial:3)
+	2:increment:2
+}shift_binary
+
+{
+	4:][
+	#(shift_binary)
+}binary_to_decimal
+
+binary_to_decimal
+print_stack
