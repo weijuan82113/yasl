@@ -91,17 +91,18 @@ print_stack
 }shift_decial
 
 {
-	3:# 0 == ?
-		3:(0):3			//decimal_stack_initall
 	1 & 1 == ?
 		(3:shift_decial:3)
 	2:increment:2
 }shift_binary
 
 {
+	3:(0):3				//decimal_stack_initall
 	4:][
 	#(shift_binary)
+	2:(! 0):2
 }binary_to_decimal
 
-binary_to_decimal
+4:#
+#(binary_to_decimal)
 print_stack
