@@ -1,0 +1,4 @@
+#!yasl_macos
+#!
+"Hello world\n"
+print

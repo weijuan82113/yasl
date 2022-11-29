@@ -5,13 +5,13 @@
 	(1 print exit): (= 1 == ?
 						(1 print exit): ())
 0: = :1
+
 {
 	=
 	1 -
 }decrement
 1 -
 #(1: decrement :1)
-
 {
 	1:("*" eval):1
 	1:# 1 > ?

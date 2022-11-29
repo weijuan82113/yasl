@@ -1,19 +1,52 @@
 #!yasl_macos
 2
 #!
-"abcdefahijkamnopq"
-"a"
-0: = :1
-0: ! :0
 
+0:(= !):1
+2:(0):2
 ][
-print_stack
 {
-	= 1:= != ?
-		(0: = ! :2) : (2:# #(2: + :2))
-}
-split
+	1
+	"+"
+	eval
+}increment
+
+{
+	2:=
+	[]
+	0:(!):0
+	2:(! 0):2
+}list_string
+
+{
+	0: (= !) :3
+	2: increment :2
+}move_to_stack3
+
+{
+	= 1:= ==?
+		(3:list_string:3):(move_to_stack3)
+}split
 
 #split
-print_stack
+{
+	2:=
+	[]
+	2:(! 0):2
+}list_last
+
+2:= 0 !=?
+	(3:list_last:3)
+
+{
+	3:=
+	3:!:3
+	][
+	#print
+	"\n"
+	print
+}print_list
+
+3:#
+#(print_list)
 

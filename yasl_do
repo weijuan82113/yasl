@@ -1,6 +1,12 @@
 #!yasl_macos
 2
 #!
-# #(+)
-eval
+3 ^
+2 ^
+2
+#(0:eval:1)
+0: (= !) :1
+1: eval :0
 print
+
+
